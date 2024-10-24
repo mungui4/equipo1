@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="bg-dark text-white mt-auto py-3 text-center">
       <div className="container">
-        <p>&copy; 2024 Mi Sitio Web. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Kodigo. Todos los derechos reservados.</p>
         <ul className="list-inline">
           <li className="list-inline-item">
             <a href="/about" className="text-white">
