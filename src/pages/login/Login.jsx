@@ -5,7 +5,7 @@ import { TokenContext } from '../../context/TokenContext';
 import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const { token, setToken } = useContext(TokenContext);
   const { log, setLog } = useContext(TokenContext);
   const navigate = useNavigate();
@@ -47,13 +47,15 @@ export const Login = () => {
       <div className='container'>
         <h2 className='text-center'>Inicio de Sesión</h2>
         <form onSubmit={handleSubmit(onSubmitForm)}>
-        <div class="mb-3">
-                        <label for="nombreUsuario" class="form-label">Ingresa nombre de usuario</label>
-                        <input type="text" class="form-control" id="nombreUsuario" placeholder="usuarioEjemplo"{...register('nombre')} />
+        <div className="mb-3">
+                        <label htmlFor="nombreUsuario" className="form-label">Ingresa nombre de usuario</label>
+                        <input type="text" className="form-control" id="nombreUsuario" placeholder="usuarioEjemplo"{...register('nombre', {required: true})} />
+                        {errors?.nombre?.type === "required" && <p>Este campo es requerido</p>}
                     </div>
-                    <div class="mb-3">
-                        <label for="contrasenaUsuario" class="form-label">Ingresa tu contraseña</label>
-                        <input type="password" class="form-control" id="contrasenaUsuario" placeholder="*****"{...register('contrasena')} />
+                    <div className="mb-3">
+                        <label htmlFor="contrasenaUsuario" className="form-label">Ingresa tu contraseña</label>
+                        <input type="password" className="form-control" id="contrasenaUsuario" placeholder="*****"{...register('contrasena', {required: true})} />
+                        {errors?.contrasena?.type === "required" && <p>Este campo es requerido</p>}
                     </div>
           <button type='submit' className="btn btn-success">Ingresar</button>
         </form>

@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 
 
 export const Register = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
 
     const onSubmitForm = async (data) => { /* Registra los usuarios */
@@ -37,13 +37,15 @@ export const Register = () => {
             <div className='container'>
             <h2 className='text-center'>Registro de usuario</h2>
                 <form onSubmit={handleSubmit(onSubmitForm)}> {/* Formulario para capturar los datos */}
-                    <div class="mb-3">
-                        <label for="nombreUsuario" class="form-label">Crea tu nombre de usuario</label>
-                        <input type="text" class="form-control" id="nombreUsuario" placeholder="usuarioEjemplo"{...register('nombre')} />
+                    <div className="mb-3">
+                        <label htmlFor="nombreUsuario" className="form-label">Crea tu nombre de usuario</label>
+                        <input type="text" className="form-control" id="nombreUsuario" placeholder="usuarioEjemplo"{...register('nombre', {required: true})} />
+                        {errors?.nombre?.type === "required" && <p>Este campo es requerido</p>}
                     </div>
-                    <div class="mb-3">
-                        <label for="contrasenaUsuario" class="form-label">Crea tu contraseña</label>
-                        <input type="password" class="form-control" id="contrasenaUsuario" placeholder="*****"{...register('contrasena')} />
+                    <div className="mb-3">
+                        <label htmlFor="contrasenaUsuario" className="form-label">Crea tu contraseña</label>
+                        <input type="password" className="form-control" id="contrasenaUsuario" placeholder="*****"{...register('contrasena', {required: true})} />
+                        {errors?.contrasena?.type === "required" && <p>Este campo es requerido</p>}
                     </div>
                    
                     <button type='submit'  className="btn btn-success">Crear</button>

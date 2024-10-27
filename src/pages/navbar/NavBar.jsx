@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/logo.webp';
 import { TokenContext } from '../../context/TokenContext';
 
 export const NavBar = () => {  /* Agrega el navbar */
   const { log, setLog } = useContext(TokenContext);
+  const {setToken} = useContext(TokenContext);
+  const navigate = useNavigate();
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -17,8 +19,11 @@ export const NavBar = () => {  /* Agrega el navbar */
             <div className="navbar-nav">
 
               < Link to='/bootcapms' className="btn btn-outline-success me-2 mb-2" type="button">Nuestros Bootcamps</Link>
-              {!log ? (<><Link to='/login' className="btn btn-outline-success me-2 mb-2" type="button">Iniciar Sesión</Link> <Link to='/register' className="btn btn-outline-success me-2 mb-2" type="button">Registrarse</Link></>) : ""} {/* Muestra los botones "Iniciar Sesión" y "Registrarse" si no existe Token, si existe los oculta */}
-
+              {!log ? (<><Link to='/login' className="btn btn-outline-success me-2 mb-2" type="button">Iniciar Sesión</Link>
+               <Link to='/register' className="btn btn-outline-success me-2 mb-2" type="button">Registrarse</Link></>) 
+               : <button to='/' className="btn btn-outline-success me-2 mb-2" type="button" onClick={()=>{setLog(false), navigate('/'), setToken(null)}}>Salir</button>
+               } {/* Muestra los botones "Iniciar Sesión" y "Registrarse" si no existe Token, si existe los oculta */}
+              
 
             </div>
           </div>
