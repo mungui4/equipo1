@@ -84,26 +84,49 @@ export const Bootcamps = () => {
     <div className="container mt-4">
       <h2 className="text-center mb-4">Lista de Bootcamps</h2>
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+      <div className="col " >
+            <div className="card h-100 shadow ">
+              <div className="card-body text-center ">
+                
+                  <button >+</button>
+                
+                <p className="card-text">
+                  <strong>Agregar</strong>
+                </p>
+                
+              </div>
+            </div>
+          </div>
+        
+          <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              <img src="..." class="rounded me-2" alt="..."/>
+              <strong class="me-auto">Bootstrap</strong>
+              <small>11 mins ago</small>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+              Hello, world! This is a toast message.
+            </div>
+          </div>
         {bootcamps.map((bootcamp, index) => (
           <div className="col" key={bootcamp.id || index}>
             <div className="card h-100 shadow">
               <div className="card-body">
                 <h5 className="card-title">
-                  {bootcamp.title || bootcamp.nombre}
+                  { bootcamp.name}
                 </h5>
                 <p className="card-text">
-                  {bootcamp.description || bootcamp.descripcion}
+                  {bootcamp.description }
                 </p>
-                {bootcamp.price && (
-                  <p className="card-text">
-                    <strong>Precio:</strong> ${bootcamp.price}
-                  </p>
-                )}
-                {bootcamp.duration && (
-                  <p className="card-text">
-                    <strong>Duración:</strong> {bootcamp.duration}
-                  </p>
-                )}
+                
+                <p className="card-text">
+                  <strong>Tecnologias:</strong>{bootcamp.technologies[0]}, {bootcamp.technologies[1]}, {bootcamp.technologies[2]}
+                </p>
+                <div className='row'>
+                  <button className='col'>Editar</button><button className='col'>Desactivar</button>
+                </div>
               </div>
             </div>
           </div>
