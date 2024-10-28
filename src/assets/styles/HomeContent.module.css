@@ -1,0 +1,19 @@
+.bgWelcome {
+    background: linear-gradient(120deg, #36d1dc, #5b86e5);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    color:rgb(255, 255, 255) ;
+  
+}
+
+.img{
+    border-radius: 10rem;
+  
+}
+
+.img2{
+border-radius: 2rem;
+}
+
+
+

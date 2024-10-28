@@ -296,7 +296,7 @@ export const Bootcamps = () => {
             <div className="card h-100 shadow">
               <div className="card-body">
                 <h5 className="card-title">{bootcamp.name}</h5>
-                <p className="card-text">{bootcamp.description}</p>
+                <p className="card-text ">{bootcamp.description}</p>
                 <div className="mb-3">
                   <strong>Tecnologías:</strong>
                   <div className="mt-2">

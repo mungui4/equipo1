@@ -9,6 +9,7 @@ export const Login = () => {
   const { token, setToken } = useContext(TokenContext);
   const { log, setLog } = useContext(TokenContext);
   const navigate = useNavigate();
+  const{userName,setUserName} =useContext(TokenContext);
 
 
 
@@ -29,6 +30,7 @@ export const Login = () => {
         const data2 = await response.json();
         setToken(data2.token); /* Guarda el token en "token" */
         setLog(true);/* Guarda el estado de existencia del token */
+        setUserName(data.nombre);
         navigate('/bootcapms'); /* Redirige a los Bootcamps una vez se ha iniciado sesión */
         
   

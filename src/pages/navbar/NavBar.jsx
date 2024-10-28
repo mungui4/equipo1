@@ -7,6 +7,7 @@ export const NavBar = () => {  /* Agrega el navbar */
   const { log, setLog } = useContext(TokenContext);
   const {setToken} = useContext(TokenContext);
   const navigate = useNavigate();
+  const{userName,setUserName} =useContext(TokenContext);
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -21,7 +22,7 @@ export const NavBar = () => {  /* Agrega el navbar */
               < Link to='/bootcapms' className="btn btn-outline-success me-2 mb-2" type="button">Nuestros Bootcamps</Link>
               {!log ? (<><Link to='/login' className="btn btn-outline-success me-2 mb-2" type="button">Iniciar Sesión</Link>
                <Link to='/register' className="btn btn-outline-success me-2 mb-2" type="button">Registrarse</Link></>) 
-               : <button to='/' className="btn btn-outline-success me-2 mb-2" type="button" onClick={()=>{setLog(false), navigate('/'), setToken(null)}}>Salir</button>
+               : <button to='/' className="btn btn-outline-danger me-2 mb-2" type="button" onClick={()=>{setLog(false), navigate('/'), setToken(null)}}>{userName} <span className='small'>(Cerrar Sesión)</span></button>
                } {/* Muestra los botones "Iniciar Sesión" y "Registrarse" si no existe Token, si existe los oculta */}
               
 

@@ -18,7 +18,7 @@ function App() {
       <NavBar/>
   
      </header>
-     <main className='mainContent container mt-2 '> {/* Contendrá las distintas vistas */}
+     <main className='mainContent container mt-2'> {/* Contendrá las distintas vistas */}
      <Routes>
       <Route path='/' element={<HomeContent/>}/> {/* Direccionaría a la landing */}
       <Route path='/bootcapms' element={<Bootcamps/>}/> {/* Direccionaría a los bootcamps con la petición a la API(pendiente) */}
