@@ -25,4 +25,27 @@ src/pages/navbar: Componente de navegación principal.
 
 src/App.jsx: Configura las rutas principales y el proveedor de contexto
 
+# Requisitos Previos
+Node.js v14 o superior.
+Yarn o npm.
+
+# Instalación
+Clona el repositorio: `git clone https://github.com/your-username/your-repo-name.git` , `cd nombre-del-proyecto`
+
+Instala las dependencias: `yarn install` o `npm install`
+
+Inicia el proyecto en modo desarrollo: `npm rum dev`
+La aplicación debería estar disponible en http://localhost:3000.
+
+# Autenticación de Usuario
+El contexto de autenticación (TokenContext) administra el estado de sesión y el token JWT del usuario. Permite iniciar y cerrar sesión, y controla el acceso a rutas protegidas.
+
+Gestión de Bootcamps
+La página Bootcamps permite al usuario visualizar los bootcamps disponibles, crear nuevos, editarlos o eliminarlos. Solo se muestran los bootcamps activos.
+
+Navegación
+La barra de navegación (NavBar) cambia dinámicamente según el estado de sesión del usuario. Muestra opciones como Iniciar Sesión, Registrarse, o Cerrar Sesión y el nombre del usuario. Cuando el usuario está autenticado, muestra un enlace a la página de perfil.
+
+
+
 
