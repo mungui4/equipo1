@@ -1,9 +1,9 @@
 # K-Bootcamps -React + Vite
 Este proyecto es una plataforma de bootcamps desarrollada con React y Vite. Incluye características de autenticación, creación y edición de bootcamps, y una navegación que permite al usuario explorar los programas ofrecidos.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta plantilla proporciona una configuración mínima para que React funcione en Vite con HMR y algunas reglas de ESLint.
 
-Currently, two official plugins are available:
+Actualmente, hay dos complementos oficiales disponibles:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
@@ -46,6 +46,42 @@ La página Bootcamps permite al usuario visualizar los bootcamps disponibles, cr
 Navegación
 La barra de navegación (NavBar) cambia dinámicamente según el estado de sesión del usuario. Muestra opciones como Iniciar Sesión, Registrarse, o Cerrar Sesión y el nombre del usuario. Cuando el usuario está autenticado, muestra un enlace a la página de perfil.
 
+
+# Componentes Principales
+Footer Component
+El componente Footer proporciona un pie de página que aparece en la parte inferior de todas las páginas de la aplicación. Este componente es ideal para incluir derechos de autor y otros enlaces importantes.
+
+Implementación
+Ubicación: src/components/Footer.jsx
+Props: No requiere props.
+Estilos: Se manejan en App.css, utilizando variables CSS para personalización.
+
+# Scripts Disponibles
+npm run dev: Inicia el servidor de desarrollo.
+npm run build: Compila la aplicación para producción.
+npm run serve: Sirve la aplicación de producción localmente.
+npm run lint: Verifica la calidad del código con ESLint.
+
+# Personalización
+Puedes cambiar los colores de la aplicación en App.css
+ modificando las variables CSS para reflejar tu marca.  
+
+#  Contribución
+Haz un fork del proyecto.
+Crea una rama con tu función (git checkout -b feature/nueva-funcion).
+Haz commit de tus cambios (git commit -m 'Agrega nueva función').
+Haz push a la rama (git push origin feature/nueva-funcion).
+Abre un Pull Request.
+
+# Contribución
+
+Si tienes alguna sugerencia o problema, no dudes en abrir una issue o contribuir con código.
+Haz un fork del proyecto.
+
+Crea una rama con tu función (git checkout -b feature/nueva-funcion).
+Haz commit de tus cambios (git commit -m 'Agrega nueva función').
+Haz push a la rama (git push origin feature/nueva-funcion).
+Abre un Pull Request.
 
 
 
